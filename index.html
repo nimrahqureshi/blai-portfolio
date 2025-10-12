@@ -11,7 +11,486 @@
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       document.documentElement.classList.remove("dark");
     }
+  </script><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLAI — Brain Link AI | Nimrah Qureshi</title>
+
+  <!-- 🧠 SEO Meta Tags -->
+  <meta name="title" content="BLAI — Brain Link AI | Nimrah Qureshi" />
+  <meta
+    name="description"
+    content="Brain Link AI (BLAI) — AI Chatbots, Fullstack Development, Web3, Blockchain, and Automation Studio by Nimrah Qureshi."
+  />
+  <meta
+    name="keywords"
+    content="BLAI, Brain Link AI, Nimrah Qureshi, AI Chatbot Developer, Web3 Developer, Fullstack Developer, Agentic AI, Automation"
+  />
+  <meta name="author" content="Nimrah Qureshi" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+
+  <!-- 🪪 Open Graph / Social Sharing -->
+  <meta
+    property="og:title"
+    content="Brain Link AI — BLAI | AI, Web3 & Automation Studio"
+  />
+  <meta
+    property="og:description"
+    content="Building the future with AI, Web3, Automation & Cloud solutions by Nimrah Qureshi."
+  />
+  <meta property="og:url" content="https://blai-portfolio.vercel.app/" />
+  <meta property="og:type" content="website" />
+  <meta
+    property="og:image"
+    content="https://blai-portfolio.vercel.app/images/logo.png"
+  />
+  <meta name="color-scheme" content="light" />
+
+  <!-- ☀️ Force Light Mode -->
+  <script>
+    // Always use light mode, ignore user's system dark mode
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      document.documentElement.classList.remove("dark");
+    }
   </script>
+  <style>
+    :root {
+      color-scheme: light only;
+    }
+
+    /* Visibility control for mobile menu */
+    .menu-hidden {
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+    }
+    .menu-visible {
+      opacity: 1;
+      max-height: 500px;
+    }
+
+    /* Force white background even in dark mode devices */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #ffffff !important;
+        color: #0f172a !important;
+      }
+      .gradient-text {
+        background: linear-gradient(90deg, #1e40af, #2563eb, #38bdf8);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  </style>
+
+  <!-- ⚙️ Frameworks -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    src="https://unpkg.com/lucide@latest"
+    defer
+    onload="lucide.createIcons()"
+  ></script>
+
+  <link rel="icon" href="images/logo.png" />
+</head>
+
+<body class="bg-gradient-to-br from-blue-50 via-white to-blue-100 text-gray-900 font-sans">
+
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-white/60 backdrop-blur-md border-b border-blue-100 shadow-sm">
+    <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <!-- Logo -->
+      <div class="flex items-center gap-3">
+        <img src="images/logo.png" alt="BLAI Logo" class="w-10 h-10" />
+        <span class="text-2xl font-extrabold bg-gradient-to-r from-blue-600 to-sky-400 bg-clip-text text-transparent">
+          BLAI
+        </span>
+      </div>
+
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex gap-8 font-medium text-gray-700">
+        <li><a href="#hero" class="hover:text-blue-600 transition">Home</a></li>
+        <li><a href="#about" class="hover:text-blue-600 transition">About</a></li>
+        <li><a href="#services" class="hover:text-blue-600 transition">Services</a></li>
+        <li><a href="#projects" class="hover:text-blue-600 transition">Projects</a></li>
+        <li><a href="#team" class="hover:text-blue-600 transition">Team</a></li>
+        <li><a href="#contact" class="hover:text-blue-600 transition">Contact</a></li>
+      </ul>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="menu-btn"
+        class="md:hidden bg-blue-600 text-white px-3 py-2 rounded-lg shadow hover:bg-blue-700"
+        aria-label="Toggle Menu"
+      >
+        <i data-lucide="menu"></i>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobile-menu"
+      class="menu-hidden flex flex-col items-center bg-white/95 backdrop-blur-md py-6 space-y-4 md:hidden border-t border-blue-100 transition-all duration-300"
+    >
+      <a href="#hero" class="hover:text-blue-700">Home</a>
+      <a href="#about" class="hover:text-blue-700">About</a>
+      <a href="#services" class="hover:text-blue-700">Services</a>
+      <a href="#projects" class="hover:text-blue-700">Projects</a>
+      <a href="#team" class="hover:text-blue-700">Team</a>
+      <a href="#contact" class="hover:text-blue-700">Contact</a>
+    </div>
+  </header>
+
+  <!-- Navbar Script -->
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const menuLinks = mobileMenu.querySelectorAll("a");
+    let menuOpen = false;
+
+    // Toggle menu
+    menuBtn.addEventListener("click", () => {
+      menuOpen = !menuOpen;
+      mobileMenu.classList.toggle("menu-visible", menuOpen);
+      mobileMenu.classList.toggle("menu-hidden", !menuOpen);
+    });
+
+    // Close menu when a link is clicked
+    menuLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("menu-visible");
+        mobileMenu.classList.add("menu-hidden");
+        menuOpen = false;
+      });
+    });
+
+    // Smooth scrolling for anchors
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: "smooth",
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+    <!-- Hero -->
+    <section id="hero" class="flex flex-col items-center justify-center min-h-screen text-center px-6 relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-blue-200/30 to-transparent blur-3xl"></div>
+      <img src="images/logo.png" alt="BLAI Logo" class="w-52 sm:w-64 md:w-72 h-auto mb-6 drop-shadow-2xl animate-pulse" />
+      <h1 class="text-5xl md:text-6xl font-extrabold gradient-text">Brain Link AI (BLAI)</h1>
+      <p class="mt-4 text-lg text-gray-700 max-w-2xl">
+        Building the future with
+        <span class="text-blue-700 font-semibold">AI, Web3, Automation & Cloud</span> solutions.
+      </p>
+     
+
+      <div class="mt-8 flex gap-4 flex-wrap justify-center">
+        <a
+          href="#contact"
+          class="bg-blue-700 hover:bg-blue-800 text-white px-8 py-3 rounded-xl shadow transition transform hover:scale-105"
+          >Let’s Connect</a
+        >
+        <a
+          href="#services"
+          class="border border-blue-700 text-blue-700 hover:bg-blue-50 px-8 py-3 rounded-xl transition transform hover:scale-105"
+          >Explore Services</a
+        >
+      </div>
+    </section>
+<!-- About -->
+<section id="about" class="relative py-24 bg-gradient-to-b from-white via-blue-30 to-blue text-center overflow-hidden" data-aos="fade-up">
+  <!-- Subtle Glow -->
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.08)_0%,transparent_70%)]"></div>
+
+  <div class="relative z-10 max-w-5xl mx-auto px-6">
+    <!-- Title -->
+    <h2 class="text-4xl md:text-5xl font-extrabold gradient-text mb-8 tracking-tight">
+      About <span class="text-blue-700">BLAI</span>
+    </h2>
+
+    <!-- Description Card -->
+    <div class="bg-white/80 backdrop-blur-md border border-blue-100 rounded-3xl shadow-xl p-8 md:p-10">
+      <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+        I’m <span class="font-semibold text-blue-700">Nimrah Qureshi</span>, founder of 
+        <span class="font-semibold">Brain Link AI (BLAI)</span> — a next-gen 
+        startup building intelligent solutions across 
+        <span class="text-blue-700 font-medium">AI, Web3, and Automation</span> 
+        that help startups and businesses evolve with the future.
+      </p>
+
+      <div class="flex flex-col md:flex-row justify-center items-center gap-4 mt-8 mb-6">
+        <div class="px-5 py-3 bg-gradient-to-r from-blue-600 to-sky-500 text-white text-sm font-semibold rounded-xl shadow hover:shadow-lg transition-all">
+          🎓 Certified AI, Metaverse & Web3.0 Developer (GIAIC)
+        </div>
+        <div class="px-5 py-3 bg-gradient-to-r from-sky-500 to-cyan-400 text-white text-sm font-semibold rounded-xl shadow hover:shadow-lg transition-all">
+          🤖 Certified Agentic & Robotic AI Engineer (PIAIC)
+        </div>
+      </div>
+
+      <p class="text-gray-700 text-lg max-w-3xl mx-auto">
+        🚀 Our mission: connecting <span class="text-blue-700 font-semibold">data</span>, 
+        <span class="text-blue-700 font-semibold">intelligence</span>, and 
+        <span class="text-blue-700 font-semibold">creativity</span> — turning ideas into
+        impactful digital realities.
+      </p>
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="flex flex-wrap justify-center gap-3 mt-10 text-gray-700">
+      <span class="px-4 py-2 bg-blue-100 rounded-full text-sm font-medium hover:bg-blue-200 transition">Python</span>
+      <span class="px-4 py-2 bg-blue-100 rounded-full text-sm font-medium hover:bg-blue-200 transition">Next.js</span>
+      <span class="px-4 py-2 bg-blue-100 rounded-full text-sm font-medium hover:bg-blue-200 transition">Node.js</span>
+      <span class="px-4 py-2 bg-blue-100 rounded-full text-sm font-medium hover:bg-blue-200 transition">OpenAI API</span>
+      <span class="px-4 py-2 bg-blue-100 rounded-full text-sm font-medium hover:bg-blue-200 transition">MongoDB</span>
+      <span class="px-4 py-2 bg-blue-100 rounded-full text-sm font-medium hover:bg-blue-200 transition">Web3.js</span>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="py-20  from-white via-blue-30 to-blue" data-aos="zoom-in">
+  <div class="max-w-5xl mx-auto grid sm:grid-cols-3 text-center gap-10 px-6">
+    <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow hover:shadow-xl transition">
+      <h3 class="text-5xl font-extrabold text-blue-700 mb-2">10+</h3>
+      <p class="text-gray-600 font-medium">Projects Delivered</p>
+    </div>
+    <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow hover:shadow-xl transition">
+      <h3 class="text-5xl font-extrabold text-blue-700 mb-2">5+</h3>
+      <p class="text-gray-600 font-medium">Active Clients</p>
+    </div>
+    <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow hover:shadow-xl transition">
+      <h3 class="text-5xl font-extrabold text-blue-700 mb-2">3+</h3>
+      <p class="text-gray-600 font-medium">AI Domains Mastered</p>
+    </div>
+  </div>
+</section>
+ 
+
+
+
+<!-- Services -->
+    <section id="services" class="py-20 bg-gradient-to-b 
+    from-blue-100/30 to-transparent text-center">
+      <h2 class="text-4xl font-bold gradient-text mb-10">Our Expertise</h2>
+      <div
+        class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto px-6"
+      >
+        <div
+          class="bg-white p-6 rounded-2xl shadow hover:shadow-lg border-t-4 border-blue-700 glow"
+        >
+          <h3 class="text-xl font-semibold text-blue-700 mb-2">🤖 AI Chatbots</h3>
+          <p class="text-gray-600">
+            NLP-driven chatbots for education, customer service & business.
+          </p>
+        </div>
+        <div
+          class="bg-white p-6 rounded-2xl shadow hover:shadow-lg border-t-4 border-blue-700 glow"
+        >
+          <h3 class="text-xl font-semibold text-blue-700 mb-2">💻 Full-Stack Apps</h3>
+          <p class="text-gray-600">
+            End-to-end web apps using React, Next.js, Node.js & databases.
+          </p>
+        </div>
+        <div
+          class="bg-white p-6 rounded-2xl shadow hover:shadow-lg border-t-4 border-blue-700 glow"
+        >
+          <h3 class="text-xl font-semibold text-blue-700 mb-2">🌐 Web3 & Blockchain</h3>
+          <p class="text-gray-600">Smart contracts, NFTs, and decentralized apps.</p>
+        </div>
+        <div
+          class="bg-white p-6 rounded-2xl shadow hover:shadow-lg border-t-4 border-blue-700 glow"
+        >
+          <h3 class="text-xl font-semibold text-blue-700 mb-2">🧠 AI Automation</h3>
+          <p class="text-gray-600">
+            Intelligent automation systems & data-driven workflows.
+          </p>
+        </div>
+        <div
+          class="bg-white p-6 rounded-2xl shadow hover:shadow-lg border-t-4 border-blue-700 glow"
+        >
+          <h3 class="text-xl font-semibold text-blue-700 mb-2">🎨 UI/UX Design</h3>
+          <p class="text-gray-600">
+            Beautiful and user-friendly interfaces that inspire confidence.
+          </p>
+        </div>
+        <div
+          class="bg-white p-6 rounded-2xl shadow hover:shadow-lg border-t-4 border-blue-700 glow"
+        >
+          <h3 class="text-xl font-semibold text-blue-700 mb-2">☁️ Cloud & Database</h3>
+          <p class="text-gray-600">
+            Reliable backends powered by Firebase, MongoDB & AWS.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-20  
+    from-white via-blue-30 to-blue text-center" data-aos="fade-up">
+      <h2 class="text-4xl font-bold gradient-text mb-10">Our Projects</h2>
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto px-6">
+        <div class="bg-blue-50 p-6 rounded-2xl shadow hover:shadow-lg glow">
+          <h3 class="text-xl font-semibold text-blue-700 mb-2">AI Chatbot Assistant</h3>
+          <p class="text-gray-600 mb-4">An intelligent chatbot built with GPT API for businesses and startups.</p>
+          <a href="#" class="text-blue-600 font-medium hover:underline">View Project →</a>
+        </div>
+        <div class="bg-blue-50 p-6 rounded-2xl shadow hover:shadow-lg glow">
+          <h3 class="text-xl font-semibold text-blue-700 mb-2">Blockchain Identity System</h3>
+          <p class="text-gray-600 mb-4">Secure decentralized ID system using smart contracts & IPFS.</p>
+          <a href="#" class="text-blue-600 font-medium hover:underline">View Project →</a>
+        </div>
+        <div class="bg-blue-50 p-6 rounded-2xl shadow hover:shadow-lg glow">
+          <h3 class="text-xl font-semibold text-blue-700 mb-2">Next.js Portfolio Template</h3>
+          <p class="text-gray-600 mb-4">A responsive, customizable portfolio template built for developers.</p>
+          <a href="#" class="text-blue-600 font-medium hover:underline">View Project →</a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Team -->
+    <section id="team" class="py-20 
+    from-blue-100/30 to-transparent  text-center">
+      <h2 class="text-4xl font-bold gradient-text mb-10">Our Team</h2>
+      <div class="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6">
+        <!-- Nimrah -->
+        <div class="p-6 rounded-2xl bg-gradient-to-br from-blue-100 to-white shadow hover:shadow-xl glow">
+          <img src="images/nimrah.jpg" alt="Nimrah Qureshi"
+            class="w-28 h-28 mx-auto rounded-full mb-4 border-4 border-blue-500 shadow-lg" />
+          <h3 class="font-semibold text-xl text-blue-700">Nimrah Qureshi</h3>
+          <p class="text-gray-600">Founder • AI & Web3 Developer</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-gradient-to-br from-blue-100 to-white shadow hover:shadow-xl glow">
+          <img src="images/member_1.jpg" alt="Teammate"
+            class="w-28 h-28 mx-auto rounded-full mb-4 border-4 border-blue-500 shadow-lg" />
+          <h3 class="font-semibold text-xl text-blue-700">Teammate</h3>
+          <p class="text-gray-600">Frontend Developer</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-gradient-to-br from-blue-100 to-white shadow hover:shadow-xl glow">
+          <img src="images/member_2.jpg" alt="Teammate"
+            class="w-28 h-28 mx-auto rounded-full mb-4 border-4 border-blue-500 shadow-lg" />
+          <h3 class="font-semibold text-xl text-blue-700">Teammate</h3>
+          <p class="text-gray-600">Backend Developer</p>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- Contact -->
+    <section id="contact" class="py-20  
+    from-white via-blue-30 to-blue
+    text-center">
+      
+      <h2 class="text-4xl font-bold gradient-text mb-6">Let’s Work Together</h2>
+       <p class="text-gray-600 mb-6 max-w-xl mx-auto">
+      Have a project or an idea? Let’s bring it to life with 
+      <span class="text-blue-700 font-semibold">innovation</span> and 
+      <span class="text-blue-700 font-semibold">intelligence</span>.
+    </p>
+
+     <!-- Contact Info -->
+    <div class="flex flex-wrap justify-center items-center gap-6 mb-10">
+      <!-- Email -->
+      <a href="mailto:brainlinkai13@gmail.com"
+         class="flex items-center gap-2 text-blue-700 hover:text-blue-800 font-medium transition transform hover:scale-105">
+        <i data-lucide="mail" class="w-5 h-5"></i>
+        brainlinkai13@gmail.com
+      </a>
+
+
+    </div>
+
+     <!-- Contact Info -->
+    <div class="flex flex-wrap justify-center items-center gap-6 mb-10">
+      
+
+      <!-- Phone -->
+      <a href="tel:+923445495438"
+         class="flex items-center gap-2 text-blue-700 hover:text-blue-800 font-medium transition transform hover:scale-105">
+        <i data-lucide="phone" class="w-5 h-5"></i>
+        0344-5495438
+      </a>
+
+    </div>
+
+
+       <!-- Contact Form -->
+    <form
+      action="https://formspree.io/f/mrbyypwq"
+      method="POST"
+      class="bg-white/80 backdrop-blur-lg p-8 rounded-2xl shadow-lg border border-blue-100 max-w-md mx-auto space-y-4"
+    >
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-200 outline-none transition"
+        required
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-200 outline-none transition"
+        required
+      />
+      <textarea
+        name="message"
+        placeholder="Your Message"
+        class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-200 outline-none transition"
+        rows="4"
+        required
+      ></textarea>
+
+      <button
+        type="submit"
+        class="w-full bg-blue-700 text-white font-semibold px-6 py-3 rounded-xl hover:bg-blue-800 transition-all shadow-md hover:shadow-lg glow"
+      >
+        Send Message
+      </button>
+    </form>
+    </section>
+    
+
+    
+
+    <!-- Footer -->
+    <footer class="py-6 bg-blue-700 text-white text-center">
+     
+       <div class="flex justify-center gap-6 text-2xl mb-6">
+      <a href="https://www.facebook.com/share/1S6UNzA4XO/" target="_blank" class="hover:text-blue-300 transition transform hover:scale-110 glow" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+      <a href="https://www.instagram.com/brain_link_ai" target="_blank" class="hover:text-pink-400 transition transform hover:scale-110 glow" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+      <a href="https://x.com/BLAI716257" target="_blank" class="hover:text-gray-300 transition transform hover:scale-110 glow" aria-label="X"><i data-lucide="twitter"></i></a>
+      <a href="https://www.linkedin.com/in/brain-link-ai-11283a389/" target="_blank" class="hover:text-blue-300 transition transform hover:scale-110 glow" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+      <a href="https://www.youtube.com/channel/UCO6oRBpsj5VIjOppRbRKvDw" target="_blank" class="hover:text-red-400 transition transform hover:scale-110 glow" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+    </div>
+     <p>© 2025 Brain Link AI — Built with 💙 by <span class="font-semibold">Nimrah Qureshi</span></p>
+
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+  </body>
+</html>
+
+
+  
   <style>
     :root {
       color-scheme: light only;
@@ -448,3 +927,4 @@
 
 
   
+

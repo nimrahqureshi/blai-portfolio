@@ -3,11 +3,11 @@
 <head> 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brain Link AI — BLAI | Nimrah Qureshi</title>
+  <title>Brain Link AI — BLAI: Agentic AI, Web3, & Automation Solutions</title>
 
   <meta name="title" content="Brain Link AI — BLAI: Agentic AI, Web3, & Automation Solutions">
-  <meta name="description" content="Brain Link AI (BLAI) — Building intelligent AI, Web3, and Automation solutions for modern startups. Featuring BLAICodeLens.">
-  <meta name="keywords" content="Brain Link AI, BLAI, Nimrah Qureshi, AI Studio, Web3 Developer, Automation, Agentic AI, BLAICodeLens, AI Startup, Pakistan">
+  <meta name="description" content="Brain Link AI (BLAI) — Building intelligent AI, Web3, and Automation solutions for modern startups. Founded by Nimrah Qureshi.">
+  <meta name="keywords" content="Brain Link AI, BLAI, Nimrah Qureshi, AI Studio, Web3 Developer, Automation, Agentic AI, AI Chatbot Developer, AI Startup, Pakistan">
   <meta name="author" content="Nimrah Qureshi">
   <meta name="robots" content="index, follow">
 
@@ -21,13 +21,12 @@
     :root { color-scheme: light only; }
 
     body {
-      /* Restored soft gradient background for a subtle 3D lift */
       background: #ffffff;
       color: #0f172a;
       font-family: 'Inter', sans-serif;
     }
 
-    /* Gradient for a more premium feel */
+    /* Stronger, professional gradient */
     .gradient-text {
       background: linear-gradient(90deg, #1d4ed8, #3b82f6, #60a5fa);
       background-clip: text;
@@ -35,23 +34,30 @@
       -webkit-text-fill-color: transparent;
     }
 
-    /* Primary CTA with shadow for a 3D/Lifted effect */
+    /* Primary CTA with strong shadow for 3D/Lifted effect */
     .primary-cta {
       background: linear-gradient(45deg, #1e40af, #2563eb);
-      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4); /* Stronger shadow */
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.5); /* Deep shadow */
       transition: all 0.3s ease;
-      /* Subtle 3D-like hover effect */
-      transform: translateZ(0); 
     }
 
     .primary-cta:hover {
-      box-shadow: 0 12px 25px rgba(37, 99, 235, 0.6);
-      transform: translateY(-2px) translateZ(10px); 
+      box-shadow: 0 15px 30px rgba(37, 99, 235, 0.7);
+      transform: translateY(-4px) scale(1.02); /* More pronounced 3D lift and scale */
     }
-    
+
+    /* Keyframe for floating logo effect (like a cartoon/3D element) */
+    @keyframes float {
+      0% { transform: translatey(0px); }
+      50% { transform: translatey(-15px); }
+      100% { transform: translatey(0px); }
+    }
+    .float-animation {
+      animation: float 4s ease-in-out infinite;
+    }
+
     .menu-hidden { opacity: 0; max-height: 0; overflow: hidden; }
     .menu-visible { opacity: 1; max-height: 500px; }
-
     img, svg { display: inline-block; }
   </style>
 </head>
@@ -61,7 +67,7 @@
   <header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-md">
     <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
       <div class="flex items-center gap-2">
-        <img src="images/logo.png" alt="BLAI Logo" class="w-8 h-8 md:w-10 md:h-10" />
+        <img src="images/logo.png" alt="BLAI Logo" class="w-8 h-8 md:w-10 md:h-10 drop-shadow-sm" />
         <span class="text-xl md:text-2xl font-extrabold text-blue-800">Brain Link AI</span>
       </div>
 
@@ -69,8 +75,8 @@
         <li><a href="#hero" class="hover:text-blue-700 transition">Home</a></li>
         <li><a href="#about" class="hover:text-blue-700 transition">About</a></li>
         <li><a href="#services" class="hover:text-blue-700 transition">Expertise</a></li>
-        <li><a href="#projects" class="hover:text-blue-700 transition">Projects</a></li> 
-        <li><a href="#contact" class="hover:text-blue-700 transition">Contact</a></li>
+        <li><a href="#projects" class="hover:text-blue-700 transition">Projects</a></li>
+        <li><a href="#contact" class="hover:text-blue-700 transition">Connect</a></li>
       </ul>
 
       <a href="#contact" class="hidden md:block primary-cta text-white px-5 py-2 rounded-lg font-semibold text-sm">
@@ -82,12 +88,12 @@
       </button>
     </nav>
 
-    <div id="mobile-menu" class="menu-hidden flex flex-col items-center bg-white/95 backdrop-blur-lg py-6 space-y-4 md:hidden border-t border-blue-100 transition-all duration-300">
+    <div id="mobile-menu" class="menu-hidden flex flex-col items-center bg-white/95 backdrop-blur-md py-6 space-y-4 md:hidden border-t border-blue-100 transition-all duration-300">
       <a href="#hero" class="hover:text-blue-700">Home</a>
       <a href="#about" class="hover:text-blue-700">About</a>
       <a href="#services" class="hover:text-blue-700">Expertise</a>
       <a href="#projects" class="hover:text-blue-700">Projects</a>
-      <a href="#contact" class="hover:text-blue-700">Contact</a>
+      <a href="#contact" class="hover:text-blue-700">Connect</a>
       <a href="#contact" class="primary-cta text-white w-2/3 text-center py-2 rounded-lg font-semibold">Start Project</a>
     </div>
   </header>
@@ -95,10 +101,10 @@
   <section id="hero" class="flex flex-col items-center justify-center min-h-screen text-center px-6 relative overflow-hidden pt-24">
     <div class="absolute inset-0 bg-gradient-to-b from-blue-200/30 to-transparent blur-3xl"></div>
     
-    <img src="images/logo.png" alt="BLAI Logo" class="w-52 sm:w-64 md:w-72 h-auto mb-6 drop-shadow-2xl animate-pulse" />
+    <img src="images/logo.png" alt="BLAI Logo" class="w-52 sm:w-64 md:w-72 h-auto mb-6 drop-shadow-2xl float-animation" />
     
     <p class="text-sm uppercase tracking-widest text-blue-600 font-bold mb-4">
-      AI. Web3. Automation. For Modern Startups.
+      The Future is Autonomous.
     </p>
     
     <h1 class="text-6xl md:text-8xl font-extrabold leading-tight tracking-tighter max-w-5xl mx-auto">
@@ -121,49 +127,85 @@
 
   <hr class="max-w-5xl mx-auto border-t border-gray-200">
 
+  <section id="services" class="py-24 bg-white text-center overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-12 tracking-tight">Our Core <span class="gradient-text">Expertise</span></h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-8 rounded-3xl border border-blue-200 shadow-xl bg-blue-50 hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+          <div class="p-3 w-max mx-auto mb-4 bg-blue-600 rounded-xl text-white shadow-md"><i data-lucide="brain" class="w-8 h-8"></i></div>
+          <h3 class="text-2xl font-bold text-blue-800 mb-3">Agentic AI Systems</h3>
+          <p class="text-gray-700">Building autonomous AI agents and intelligent chatbots that handle complex tasks, decision-making, and automation pipelines.</p>
+        </div>
+        
+        <div class="p-8 rounded-3xl border border-blue-100 shadow-xl bg-white hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+          <div class="p-3 w-max mx-auto mb-4 bg-cyan-500 rounded-xl text-white shadow-md"><i data-lucide="layers" class="w-8 h-8"></i></div>
+          <h3 class="text-2xl font-bold text-gray-800 mb-3">Decentralized Web3</h3>
+          <p class="text-gray-700">Specializing in Solidity smart contracts, DApps, blockchain integration, and robust Web3 backend infrastructure (Node.js/Ethers).</p>
+        </div>
+        
+        <div class="p-8 rounded-3xl border border-blue-200 shadow-xl bg-blue-50 hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+          <div class="p-3 w-max mx-auto mb-4 bg-blue-600 rounded-xl text-white shadow-md"><i data-lucide="zap" class="w-8 h-8"></i></div>
+          <h3 class="text-2xl font-bold text-blue-800 mb-3">Business Automation</h3>
+          <p class="text-gray-700">Creating custom automation solutions using Python and integrating cloud services (AWS/Azure) for optimized operational workflows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <hr class="max-w-5xl mx-auto border-t border-gray-200">
+
   <section id="projects" class="py-24 bg-white text-center overflow-hidden">
     <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-12 tracking-tight">Featured <span class="gradient-text">Project</span></h2>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-12 tracking-tight">Our <span class="gradient-text">Showcase</span></h2>
 
-      <div class="bg-white rounded-3xl border border-blue-200 shadow-2xl p-8 md:p-12 mx-auto max-w-4xl hover:shadow-blue-300/50 transition duration-500">
-        <div class="flex flex-col md:flex-row items-center gap-6">
-          <div class="text-4xl text-blue-700 p-4 bg-blue-100 rounded-full flex-shrink-0">
-             <i data-lucide="code-square" class="w-10 h-10"></i>
+      <div class="grid md:grid-cols-2 gap-10">
+        
+        <div class="p-8 bg-white rounded-3xl border border-blue-200 shadow-2xl hover:shadow-blue-300/50 transition duration-500 transform hover:-translate-y-1">
+          <div class="flex items-center gap-4 mb-4">
+            <i data-lucide="code-square" class="w-8 h-8 text-blue-600"></i>
+            <h3 class="text-2xl font-extrabold text-blue-800">BLAICodeLens (Internal)</h3>
           </div>
-          <div class="text-left">
-            <h3 class="text-3xl font-extrabold text-blue-800 mb-2">BLAICodeLens</h3>
-            <p class="text-xl text-gray-700 mb-4">
-              A bespoke **AI-Powered Code Review and Analysis Tool** developed for internal projects and client codebase audits.
-            </p>
-            <p class="text-gray-600 text-sm italic">
-              Leveraging advanced **LLMs** to ensure **code quality**, **security**, and **efficiency** at scale.
-            </p>
+          <p class="text-lg text-gray-700 mb-4">
+            An advanced **AI-Powered Code Review and Analysis Tool** ensuring the highest standards of code quality, security, and efficiency in our deliverables.
+          </p>
+          <a href="#" class="border border-blue-400 text-blue-600 hover:bg-blue-50 px-6 py-2 rounded-lg font-semibold inline-flex items-center text-sm transition">
+              View Insights <i data-lucide="eye" class="w-4 h-4 ml-2"></i>
+          </a>
+        </div>
+
+        <div class="p-8 bg-blue-50 rounded-3xl border border-blue-100 shadow-xl hover:shadow-blue-200/50 transition duration-500 transform hover:-translate-y-1">
+          <div class="flex items-center gap-4 mb-4">
+            <i data-lucide="landmark" class="w-8 h-8 text-cyan-600"></i>
+            <h3 class="text-2xl font-extrabold text-gray-800">Decentralized Finance (DeFi) Platform</h3>
           </div>
+          <p class="text-lg text-gray-700 mb-4">
+            A secure Web3 application enabling peer-to-peer asset exchange and staking, built on Next.js and Solidity for high performance.
+          </p>
+          <a href="#" class="primary-cta text-white px-6 py-2 rounded-lg font-semibold inline-flex items-center text-sm">
+              View Case Study <i data-lucide="file-text" class="w-4 h-4 ml-2"></i>
+          </a>
         </div>
-        <div class="mt-8">
-            <a href="#" class="primary-cta text-white px-8 py-3 rounded-lg font-semibold inline-flex items-center">
-                Explore BLAICodeLens Insights <i data-lucide="eye" class="w-5 h-5 ml-2"></i>
-            </a>
-        </div>
+        
       </div>
     </div>
   </section>
 
   <hr class="max-w-5xl mx-auto border-t border-gray-200">
-  
+
   <section id="about" class="py-24 bg-white text-center overflow-hidden">
     <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-12 tracking-tight">Our <span class="gradient-text">Vision</span> & Capabilities</h2>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-12 tracking-tight">Meet <span class="gradient-text">Nimrah Qureshi</span></h2>
 
       <div class="grid md:grid-cols-2 gap-10 text-left">
-        <div class="p-8 bg-white rounded-2xl border border-gray-100 shadow-xl hover:shadow-lg transition duration-300">
+        <div class="p-8 bg-white rounded-2xl border border-gray-100 shadow-xl hover:shadow-lg transition duration-300 transform hover:scale-[1.01]">
           <p class="text-xl text-gray-700 leading-relaxed mb-6">
-            I’m <span class="font-bold text-blue-700">Nimrah Qureshi</span>, founder of **Brain Link AI (BLAI)**. I build next-gen solutions across **Agentic AI** systems and **decentralized Web3** architectures for scalable digital products.
+            I’m <span class="font-bold text-blue-700">Nimrah Qureshi</span>, founder of **Brain Link AI (BLAI)**. My focus is on leveraging **Agentic AI** and **decentralized Web3** architectures to create highly scalable, intelligent digital products.
           </p>
 
-          <h3 class="text-xl font-bold text-blue-700 mb-4">Core Mission</h3>
-          <p class="text-gray-700 italic">
-            "Connecting **Data**, **Intelligence**, and **Creativity** — turning visionary ideas into measurable, impactful digital realities."
+          <h3 class="text-xl font-bold text-blue-700 mb-4 flex items-center"><i data-lucide="target" class="w-5 h-5 mr-2"></i> Our Driving Philosophy</h3>
+          <p class="text-gray-700 italic border-l-4 border-blue-500 pl-4">
+            "Connecting **Data**, **Intelligence**, and **Creativity** — turning visionary ideas into measurable, impactful digital realities for modern enterprises."
           </p>
         </div>
 
@@ -177,13 +219,13 @@
           </div>
 
           <div class="p-6 bg-white border border-gray-200 rounded-2xl shadow-lg">
-            <h3 class="text-2xl font-bold text-gray-800 mb-3 flex items-center"><i data-lucide="code" class="w-6 h-6 mr-3"></i> Tech Stack Proficiency</h3>
+            <h3 class="text-2xl font-bold text-gray-800 mb-3 flex items-center"><i data-lucide="code" class="w-6 h-6 mr-3"></i> Core Tech Stack</h3>
             <div class="flex flex-wrap gap-3">
-              <span class="px-4 py-2 bg-gray-100 rounded-full text-sm font-medium text-gray-700 hover:bg-gray-200 transition">Python</span>
-              <span class="px-4 py-2 bg-gray-100 rounded-full text-sm font-medium text-gray-700 hover:bg-gray-200 transition">Next.js</span>
-              <span class="px-4 py-2 bg-gray-100 rounded-full text-sm font-medium text-gray-700 hover:bg-gray-200 transition">Node.js</span>
-              <span class="px-4 py-2 bg-gray-100 rounded-full text-sm font-medium text-gray-700 hover:bg-gray-200 transition">OpenAI API</span>
-              <span class="px-4 py-2 bg-gray-100 rounded-full text-sm font-medium text-gray-700 hover:bg-gray-200 transition">Web3.js (Ethers/Solidity)</span>
+              <span class="px-4 py-2 bg-blue-100 rounded-full text-sm font-medium text-gray-700 hover:bg-blue-200 transition">Python</span>
+              <span class="px-4 py-2 bg-blue-100 rounded-full text-sm font-medium text-gray-700 hover:bg-blue-200 transition">Next.js</span>
+              <span class="px-4 py-2 bg-blue-100 rounded-full text-sm font-medium text-gray-700 hover:bg-blue-200 transition">Node.js</span>
+              <span class="px-4 py-2 bg-blue-100 rounded-full text-sm font-medium text-gray-700 hover:bg-blue-200 transition">OpenAI API</span>
+              <span class="px-4 py-2 bg-blue-100 rounded-full text-sm font-medium text-gray-700 hover:bg-blue-200 transition">Web3.js/Solidity</span>
             </div>
           </div>
         </div>
@@ -191,22 +233,17 @@
     </div>
   </section>
 
-  <hr class="max-w-5xl mx-auto border-t border-gray-200">
-
   <section id="contact" class="py-24 bg-blue-700">
     <div class="max-w-4xl mx-auto px-6 text-center text-white">
-      <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Ready to Innovate?</h2>
+      <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Ready to Collaborate?</h2>
       <p class="text-xl mb-8 opacity-90">
-        Let's integrate high-performance AI, reliable Web3, and powerful automation into your next project.
+        Start a conversation about your project's AI, Web3, or Automation needs. Let's engineer your growth.
       </p>
       <a href="mailto:your_email@example.com" class="bg-white text-blue-700 hover:bg-gray-100 px-12 py-4 rounded-xl font-bold text-lg shadow-2xl transition transform hover:scale-105">
-        Book a Strategy Call <i data-lucide="zap" class="w-5 h-5 inline-block ml-2"></i>
+        Email Nimrah Directly <i data-lucide="send" class="w-5 h-5 inline-block ml-2"></i>
       </a>
+      <p class="mt-4 text-sm opacity-75">Connect instantly on LinkedIn or Email above.</p>
     </div>
-  </section>
-
-  <section id="services" class="h-48 flex items-center justify-center bg-gray-50 border-t border-b border-gray-200">
-    <p class="text-xl text-gray-500">**[Detailed Services Section Content Goes Here]**</p>
   </section>
 
   <footer class="py-12 bg-gray-900 text-white">
@@ -236,12 +273,9 @@
       mobileMenu.classList.toggle("menu-visible", menuOpen);
       mobileMenu.classList.toggle("menu-hidden", !menuOpen);
       const menuIcon = menuBtn.querySelector('i');
-      if (menuOpen) {
-          menuIcon.setAttribute('data-lucide', 'x');
-      } else {
-          menuIcon.setAttribute('data-lucide', 'menu');
-      }
-      lucide.createIcons(); // Re-render icon
+      // Toggles between menu and X icon
+      menuIcon.setAttribute('data-lucide', menuOpen ? 'x' : 'menu');
+      lucide.createIcons();
     };
 
     menuBtn.addEventListener("click", toggleMenu);
@@ -254,13 +288,13 @@
       });
     });
 
-    // Dummy Functionality for "BLAI" text input (Kept for reference)
+    // Dummy Functionality for "BLAI" text input (Kept for reference on how a simple check works)
     function showSiteBasedOnText(text) {
         const siteURL = "https://nimrahqureshi.github.io/blai-portfolio/"; 
         if (text.toLowerCase() === 'blai' || text.toLowerCase() === 'brain link ai') {
             console.log(`Text matched: ${text}. Redirecting to ${siteURL}`);
-            // In a real scenario: window.location.href = siteURL;
-            alert(`Simulated: Opening the BLAI website for the search term: "${text}"`);
+            // If this were an actual application: window.location.href = siteURL;
+            alert(`Simulated: Opening the BLAI website for the search term: "${text}". Note: This is a simulation, as browser search is controlled by Google/SEO.`);
         } else {
             console.log("Text did not match expected inputs.");
         }

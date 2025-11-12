@@ -5,180 +5,155 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brain Link AI — BLAI | Nimrah Qureshi</title>
 
-  <meta name="description" content="Official portfolio of Brain Link AI (BLAI) — AI, Web3 & Automation Studio by Nimrah Qureshi. Explore our AI tools & futuristic innovations." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://nimrahqureshi.github.io/blai-portfolio/" />
-  <link rel="icon" href="images/logo.png" type="image/png" />
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Brain Link AI — BLAI | Nimrah Qureshi">
+  <meta name="description" content="Official portfolio of Brain Link AI (BLAI) — AI, Web3, and Automation studio by Nimrah Qureshi. Explore futuristic AI projects and tools.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://nimrahqureshi.github.io/blai-portfolio/">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/logo.png" type="image/png">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest" defer onload="lucide.createIcons()"></script>
 
-  <!-- AI Particle Background -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
   <style>
     body {
+      background: linear-gradient(180deg, #e0f2fe, #ffffff, #dbeafe);
       font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at top, #e0f2ff, #ffffff);
       color: #0f172a;
       overflow-x: hidden;
     }
-
-    /* Glow & 3D Style */
-    .glow {
-      box-shadow: 0 0 25px rgba(56, 189, 248, 0.4), inset 0 0 25px rgba(56, 189, 248, 0.1);
-    }
-
     .gradient-text {
-      background: linear-gradient(90deg, #0ea5e9, #2563eb, #60a5fa);
+      background: linear-gradient(90deg, #2563eb, #3b82f6, #38bdf8);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-
-    /* Navbar */
-    header {
-      background: linear-gradient(to right, #1e40af, #2563eb);
-      color: white;
-    }
-
-    /* Hero */
-    #hero {
-      background: linear-gradient(to bottom right, #dbeafe, #eff6ff);
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* AI Background Animation */
-    #particles-js {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: 0;
-    }
-
-    section {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* 3D Cards */
-    .card {
+    .glow {
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
       transition: all 0.3s ease;
     }
-    .card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 0 25px rgba(37, 99, 235, 0.3);
+    .glow:hover {
+      box-shadow: 0 0 35px rgba(59, 130, 246, 0.6);
+      transform: scale(1.02);
     }
-
-    /* Contact Section */
-    .contact-box {
-      background: white;
-      border: 1px solid #93c5fd;
-      box-shadow: 0 0 20px rgba(96, 165, 250, 0.3);
+    .section {
+      padding: 100px 20px;
     }
-
-    footer {
-      background: linear-gradient(to right, #93c5fd, #bfdbfe);
+    .floating-bg {
+      background: radial-gradient(circle at 50% 50%, rgba(191, 219, 254, 0.6), transparent 60%);
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: -1;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: float 8s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translate(-50%, 0px); }
+      50% { transform: translate(-50%, 20px); }
     }
   </style>
 </head>
 
 <body>
-  <!-- Navbar -->
-  <header class="fixed top-0 left-0 w-full z-50 shadow-lg">
+
+  <!-- ✅ Navbar -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-blue-100/80 backdrop-blur-lg shadow-md border-b border-blue-200">
     <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
       <div class="flex items-center gap-3">
-        <img src="images/logo.png" alt="BLAI Logo" class="w-10 h-10 glow rounded-full" />
-        <span class="text-2xl font-extrabold">BLAI</span>
+        <img src="images/logo.png" alt="BLAI Logo" class="w-10 h-10" />
+        <span class="text-2xl font-extrabold gradient-text">BLAI</span>
       </div>
-      <ul class="hidden md:flex gap-8 font-medium">
-        <li><a href="#hero" class="hover:text-blue-200">Home</a></li>
-        <li><a href="#about" class="hover:text-blue-200">About</a></li>
-        <li><a href="#projects" class="hover:text-blue-200">Projects</a></li>
-        <li><a href="#contact" class="hover:text-blue-200">Contact</a></li>
+      <ul class="hidden md:flex gap-8 font-medium text-blue-900">
+        <li><a href="#hero" class="hover:text-blue-600">Home</a></li>
+        <li><a href="#projects" class="hover:text-blue-600">Projects</a></li>
+        <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero -->
-  <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20 relative">
-    <div id="particles-js"></div>
-    <img src="images/logo.png" alt="BLAI Logo" class="w-52 h-auto mb-6 glow rounded-full" />
-    <h1 class="text-5xl md:text-6xl font-extrabold gradient-text">Brain Link AI (BLAI)</h1>
-    <p class="mt-4 text-lg max-w-2xl text-gray-700">
-      Building AI, Web3, and Automation tools that power the future of startups.
+  <!-- ✅ Floating Glow -->
+  <div class="floating-bg"></div>
+
+  <!-- ✅ Hero Section -->
+  <section id="hero" class="section text-center min-h-screen flex flex-col justify-center items-center relative">
+    <img src="images/logo.png" alt="BLAI Logo" class="w-52 mb-6 drop-shadow-2xl glow rounded-full" />
+    <h1 class="text-6xl font-extrabold gradient-text mb-4">Brain Link AI (BLAI)</h1>
+    <p class="text-lg text-blue-900 max-w-2xl">
+      Building intelligent AI, Web3, and Automation solutions for startups worldwide.
     </p>
-    <div class="mt-8 flex gap-4">
-      <a href="#projects" class="bg-blue-700 hover:bg-blue-800 text-white px-8 py-3 rounded-xl shadow">See Projects</a>
-      <a href="#contact" class="border border-blue-700 text-blue-700 hover:bg-blue-50 px-8 py-3 rounded-xl">Contact Me</a>
+    <div class="mt-8 flex gap-4 flex-wrap justify-center">
+      <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl shadow-lg glow">🚀 View Projects</a>
+      <a href="#contact" class="border border-blue-600 text-blue-700 hover:bg-blue-50 px-8 py-3 rounded-xl glow">📞 Contact Me</a>
     </div>
   </section>
 
-  <!-- About -->
-  <section id="about" class="py-24 text-center bg-gradient-to-br from-blue-100 via-white to-blue-200">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-4xl font-extrabold gradient-text mb-6">About Me</h2>
-      <p class="text-lg text-gray-700 leading-relaxed">
-        I’m <b class="text-blue-700">Nimrah Qureshi</b>, founder of <b>Brain Link AI (BLAI)</b> — crafting intelligent AI solutions, automation, and web experiences.
-        My goal: make AI accessible and powerful for everyone.
-      </p>
-      <img src="https://cdn.pixabay.com/photo/2023/07/02/05/45/ai-robot-8105194_960_720.png" alt="AI Robot" class="mx-auto mt-10 w-64 rounded-2xl shadow-lg glow">
-    </div>
-  </section>
+  <!-- ✅ Projects Section -->
+  <section id="projects" class="section bg-gradient-to-b from-blue-50 to-blue-100 text-center relative">
+    <h2 class="text-5xl font-extrabold gradient-text mb-12">Our AI Projects</h2>
+    <div class="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto px-4">
 
-  <!-- Projects -->
-  <section id="projects" class="py-24 text-center bg-gradient-to-b from-blue-50 via-white to-blue-100">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-4xl font-extrabold gradient-text mb-10">Featured Project</h2>
-      <div class="card bg-white p-8 rounded-3xl shadow-xl glow">
-        <h3 class="text-2xl font-bold mb-3">🚀 BLAI CodeLens — AI Code Reviewer</h3>
-        <p class="text-gray-700 mb-6">
-          AI-powered code reviewer that analyzes GitHub repos, checks quality, and suggests improvements using AI.
+      <!-- Project 1 -->
+      <div class="bg-white p-8 rounded-3xl glow border border-blue-100">
+        <img src="images/logo.png" alt="BLAI CodeLens" class="w-20 mx-auto mb-4">
+        <h3 class="text-2xl font-bold text-blue-700 mb-2">BLAI CodeLens</h3>
+        <p class="text-gray-700 mb-4">
+          AI-powered Code Reviewer that analyzes GitHub repos and gives smart feedback.
         </p>
-        <div class="flex justify-center gap-6">
-          <a href="https://blai-codelens-frontend.vercel.app/" target="_blank" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-xl">Live Demo</a>
-          <a href="https://github.com/nimrahqureshi/blai-codelens" target="_blank" class="border border-blue-700 text-blue-700 hover:bg-blue-50 px-6 py-3 rounded-xl">GitHub Repo</a>
+        <div class="flex justify-center gap-4">
+          <a href="https://blai-codelens-frontend.vercel.app/" target="_blank" class="bg-blue-700 text-white px-6 py-2 rounded-lg glow">Live Demo</a>
+          <a href="https://github.com/nimrahqureshi/blai-codelens" target="_blank" class="border border-blue-700 text-blue-700 px-6 py-2 rounded-lg glow">GitHub</a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-24 bg-gradient-to-br from-blue-200 via-white to-blue-300 text-center">
-    <div class="max-w-3xl mx-auto contact-box p-10 rounded-3xl">
-      <h2 class="text-4xl font-extrabold gradient-text mb-6">Contact Me</h2>
-      <p class="text-lg text-gray-700 mb-6">
-        Let’s connect for collaborations, projects, or AI consulting.
-      </p>
-      <div class="space-y-4">
-        <p><b>Email:</b> <a href="mailto:nimrahqureshi716257@gmail.com" class="text-blue-700 hover:underline">nimrahqureshi716257@gmail.com</a></p>
-        <p><b>WhatsApp:</b> <a href="https://wa.me/923432817289" class="text-green-600 hover:underline">+92 343 2817289</a></p>
-        <p><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/brain-link-ai-11283a389/" class="text-blue-700 hover:underline">Brain Link AI</a></p>
+      <!-- Project 2 -->
+      <div class="bg-white p-8 rounded-3xl glow border border-blue-100">
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" alt="AI Agent" class="w-20 mx-auto mb-4">
+        <h3 class="text-2xl font-bold text-blue-700 mb-2">AI Portfolio Chatbot</h3>
+        <p class="text-gray-700 mb-4">
+          Smart conversational agent trained on your portfolio and GitHub projects.
+        </p>
+        <a href="#" class="bg-blue-600 text-white px-6 py-2 rounded-lg glow">Coming Soon</a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="py-6 text-center text-gray-800">
-    <p>© 2025 Brain Link AI — Built by <b>Nimrah Qureshi</b></p>
-  </footer>
+  <!-- ✅ Contact Section -->
+  <section id="contact" class="section bg-white text-center relative">
+    <h2 class="text-5xl font-extrabold gradient-text mb-8">Contact Me</h2>
+    <p class="text-lg text-gray-700 mb-10">Let’s build something intelligent together 🤖</p>
 
-  <!-- Particles Script -->
-  <script>
-    particlesJS('particles-js', {
-      "particles": {
-        "number": { "value": 80 },
-        "color": { "value": "#60a5fa" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.6 },
-        "size": { "value": 3 },
-        "line_linked": { "enable": true, "color": "#3b82f6" },
-        "move": { "speed": 2 }
-      }
-    });
-  </script>
+    <div class="bg-blue-50 border border-blue-100 max-w-xl mx-auto p-8 rounded-3xl glow">
+      <p class="text-gray-700 mb-4">
+        📧 <b>Email:</b> <a href="mailto:brainlinkai@gmail.com" class="text-blue-700 underline">brainlinkai@gmail.com</a>
+      </p>
+      <p class="text-gray-700 mb-4">
+        💬 <b>WhatsApp:</b> 
+        <a href="https://wa.me/923432817289" target="_blank" class="text-green-600 font-semibold hover:underline">+92 343 2817289</a>
+      </p>
+      <p class="text-gray-700">
+        🌐 <b>Portfolio:</b> <a href="https://nimrahqureshi.github.io/blai-portfolio/" class="text-blue-700 underline">BLAI Portfolio</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ✅ Footer -->
+  <footer class="py-6 bg-blue-100 text-center border-t border-blue-200">
+    <div class="flex justify-center gap-6 text-2xl mb-4 text-blue-700">
+      <a href="https://x.com/BLAI716257" target="_blank"><i data-lucide="twitter"></i></a>
+      <a href="https://www.linkedin.com/in/brain-link-ai-11283a389/" target="_blank"><i data-lucide="linkedin"></i></a>
+      <a href="https://www.instagram.com/brain_link_ai" target="_blank"><i data-lucide="instagram"></i></a>
+      <a href="https://www.youtube.com/channel/UCO6oRBpsj5VIjOppRbRKvDw" target="_blank"><i data-lucide="youtube"></i></a>
+    </div>
+    <p class="text-blue-900">© 2025 Brain Link AI — Built by <b>Nimrah Qureshi</b></p>
+  </footer>
 </body>
 </html>

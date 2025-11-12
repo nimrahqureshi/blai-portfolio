@@ -1,229 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brain Link AI — BLAI | Nimrah Qureshi</title>
 
-  <meta name="title" content="Brain Link AI — BLAI | Nimrah Qureshi">
-  <meta name="description" content="Official portfolio of Brain Link AI (BLAI) — Building AI, Web3, and Automation solutions for startups. Founded by Nimrah Qureshi. Explore our AI CodeLens tool.">
-  <meta name="keywords" content="Brain Link AI, BLAI, Nimrah Qureshi, BLAI Codelens, AI Portfolio, AI Tools, Web3 Developer, Automation, Agentic AI, AI Startup, Pakistan, GitHub Pages">
-  <meta name="author" content="Nimrah Qureshi">
-  <meta name="robots" content="index, follow">
+  <meta name="description" content="Official portfolio of Brain Link AI (BLAI) — AI, Web3 & Automation Studio by Nimrah Qureshi. Explore our AI tools & futuristic innovations." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://nimrahqureshi.github.io/blai-portfolio/" />
+  <link rel="icon" href="images/logo.png" type="image/png" />
 
-  <link rel="canonical" href="https://nimrahqureshi.github.io/blai-portfolio/">
-
-  <link rel="icon" href="https://nimrahqureshi.github.io/blai-portfolio/images/logo.png" type="image/png">
-
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest" defer onload="lucide.createIcons()"></script>
 
+  <!-- AI Particle Background -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
   <style>
-    :root { color-scheme: light only; }
-    body { background: #ffffff; color: #0f172a; font-family: 'Inter', sans-serif; }
-    
-    /* Strong Gradient Text */
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top, #e0f2ff, #ffffff);
+      color: #0f172a;
+      overflow-x: hidden;
+    }
+
+    /* Glow & 3D Style */
+    .glow {
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.4), inset 0 0 25px rgba(56, 189, 248, 0.1);
+    }
+
     .gradient-text {
-      background: linear-gradient(90deg, #1e40af, #2563eb, #38bdf8);
+      background: linear-gradient(90deg, #0ea5e9, #2563eb, #60a5fa);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    /* Custom 3D Glowing Shadow */
-    .glow-shadow {
-        box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4); /* Normal blue glow */
-        transition: all 0.3s ease;
-    }
-    .glow-shadow:hover {
-        box-shadow: 0 20px 40px rgba(59, 130, 246, 0.6); /* Lighter blue glow on hover */
-        transform: translateY(-5px);
-    }
-    
-    /* Custom Animation for Floating AI Element */
-    @keyframes float-ai {
-      0% { transform: translate(0, 0) scale(1); opacity: 0.8; }
-      50% { transform: translate(10px, -10px) scale(1.05); opacity: 1; }
-      100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
-    }
-    .ai-float {
-        animation: float-ai 6s ease-in-out infinite;
+    /* Navbar */
+    header {
+      background: linear-gradient(to right, #1e40af, #2563eb);
+      color: white;
     }
 
-    .menu-hidden { opacity: 0; max-height: 0; overflow: hidden; }
-    .menu-visible { opacity: 1; max-height: 500px; }
+    /* Hero */
+    #hero {
+      background: linear-gradient(to bottom right, #dbeafe, #eff6ff);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* AI Background Animation */
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    section {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* 3D Cards */
+    .card {
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 0 25px rgba(37, 99, 235, 0.3);
+    }
+
+    /* Contact Section */
+    .contact-box {
+      background: white;
+      border: 1px solid #93c5fd;
+      box-shadow: 0 0 20px rgba(96, 165, 250, 0.3);
+    }
+
+    footer {
+      background: linear-gradient(to right, #93c5fd, #bfdbfe);
+    }
   </style>
 </head>
 
-<body class="bg-gradient-to-br from-blue-50 via-white to-blue-100 text-gray-900 font-sans">
-
-  <header class="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-md border-b border-blue-100 shadow-sm">
+<body>
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 w-full z-50 shadow-lg">
     <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
       <div class="flex items-center gap-3">
-        <img src="images/logo.png" alt="BLAI Logo" class="w-10 h-10" />
-        <span class="text-2xl font-extrabold text-blue-800">Brain Link AI</span>
+        <img src="images/logo.png" alt="BLAI Logo" class="w-10 h-10 glow rounded-full" />
+        <span class="text-2xl font-extrabold">BLAI</span>
       </div>
-
-      <ul class="hidden md:flex gap-8 font-medium text-gray-700">
-        <li><a href="#hero" class="hover:text-blue-600 transition">Home</a></li>
-        <li><a href="#about" class="hover:text-blue-600 transition">About</a></li>
-        <li><a href="#projects" class="hover:text-blue-600 transition">Projects</a></li>
-        <li><a href="#contact" class="hover:text-blue-600 transition">Contact</a></li>
+      <ul class="hidden md:flex gap-8 font-medium">
+        <li><a href="#hero" class="hover:text-blue-200">Home</a></li>
+        <li><a href="#about" class="hover:text-blue-200">About</a></li>
+        <li><a href="#projects" class="hover:text-blue-200">Projects</a></li>
+        <li><a href="#contact" class="hover:text-blue-200">Contact</a></li>
       </ul>
-
-      <button id="menu-btn" class="md:hidden bg-blue-600 text-white px-3 py-2 rounded-lg shadow hover:bg-blue-700" aria-label="Toggle Menu">
-        <i data-lucide="menu"></i>
-      </button>
     </nav>
-
-    <div id="mobile-menu" class="menu-hidden flex flex-col items-center bg-white/95 backdrop-blur-md py-6 space-y-4 md:hidden border-t border-blue-100 transition-all duration-300">
-      <a href="#hero" class="hover:text-blue-700">Home</a>
-      <a href="#about" class="hover:text-blue-700">About</a>
-      <a href="#projects" class="hover:text-blue-700">Projects</a>
-      <a href="#contact" class="hover:text-blue-700">Contact</a>
-    </div>
   </header>
 
-  <section id="hero" class="flex flex-col items-center justify-center min-h-screen text-center px-6 relative pt-24">
-    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 ai-float"></div>
-
-    <img src="images/logo.png" alt="BLAI Logo" class="w-52 sm:w-64 md:w-72 h-auto mb-6 drop-shadow-2xl animate-pulse z-10" />
-    <h1 class="text-6xl md:text-7xl font-extrabold gradient-text z-10">Brain Link AI (BLAI)</h1>
-    <p class="mt-4 text-xl text-gray-700 max-w-2xl z-10 font-semibold">
-      Engineering the Future with Intelligent AI, Web3, and Automation Solutions.
+  <!-- Hero -->
+  <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20 relative">
+    <div id="particles-js"></div>
+    <img src="images/logo.png" alt="BLAI Logo" class="w-52 h-auto mb-6 glow rounded-full" />
+    <h1 class="text-5xl md:text-6xl font-extrabold gradient-text">Brain Link AI (BLAI)</h1>
+    <p class="mt-4 text-lg max-w-2xl text-gray-700">
+      Building AI, Web3, and Automation tools that power the future of startups.
     </p>
-
-    <div class="mt-10 flex gap-4 flex-wrap justify-center z-10">
-      <a href="#projects" class="bg-blue-700 hover:bg-blue-800 text-white px-8 py-3 rounded-xl glow-shadow transition transform hover:scale-105">
-        <i data-lucide="code" class="w-5 h-5 inline-block mr-2"></i> See Projects
-      </a>
-      <a href="#contact" class="border border-blue-700 text-blue-700 hover:bg-blue-50 px-8 py-3 rounded-xl glow-shadow transition transform hover:scale-105">
-        <i data-lucide="mail" class="w-5 h-5 inline-block mr-2"></i> Contact Me
-      </a>
+    <div class="mt-8 flex gap-4">
+      <a href="#projects" class="bg-blue-700 hover:bg-blue-800 text-white px-8 py-3 rounded-xl shadow">See Projects</a>
+      <a href="#contact" class="border border-blue-700 text-blue-700 hover:bg-blue-50 px-8 py-3 rounded-xl">Contact Me</a>
     </div>
   </section>
 
-  <section id="about" class="py-24 text-center bg-white border-t border-b border-blue-100">
-    <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-4xl md:text-5xl font-extrabold gradient-text mb-8">About BLAI</h2>
-      <div class="bg-blue-50 p-8 rounded-2xl shadow-xl border border-blue-100 glow-shadow hover:shadow-2xl">
-        <p class="text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-          I’m <b class="text-blue-700">Nimrah Qureshi</b>, founder of <b>Brain Link AI (BLAI)</b>. My mission is to build intelligent AI and Web3 solutions that empower modern startups. I specialize in developing custom AI agents, robust Web3 applications, and full-stack automation tools that connect creativity with cutting-edge data science and intelligence.
-        </p>
-        <div class="flex flex-wrap justify-center gap-4 mt-8">
-            <span class="px-5 py-2 bg-blue-600 text-white rounded-full text-sm font-semibold shadow-md">Agentic AI</span>
-            <span class="px-5 py-2 bg-cyan-500 text-white rounded-full text-sm font-semibold shadow-md">Web3 & Solidity</span>
-            <span class="px-5 py-2 bg-blue-600 text-white rounded-full text-sm font-semibold shadow-md">Automation</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="ai-filler" class="py-16 text-center relative overflow-hidden bg-gradient-to-r from-blue-50 to-white">
-    <div class="max-w-6xl mx-auto px-6">
-        <h3 class="text-3xl font-extrabold text-blue-800 mb-8">Current State of Intelligence (The AI Core)</h3>
-        
-        <div class="flex justify-center gap-6 flex-wrap">
-            <div class="w-48 h-48 bg-white border-4 border-blue-300 rounded-2xl glow-shadow p-4 flex flex-col items-center justify-center transform hover:scale-105 transition duration-300">
-                <i data-lucide="database" class="w-10 h-10 text-blue-600 mb-2"></i>
-                <p class="text-md font-semibold text-gray-800">Data Input Stream</p>
-                <p class="text-xs text-gray-500 mt-1">Feeds the core intelligence.</p>
-            </div>
-
-            <div class="w-48 h-48 bg-blue-200 border-4 border-blue-400 rounded-2xl glow-shadow p-4 flex flex-col items-center justify-center transform hover:scale-105 transition duration-300">
-                <i data-lucide="cpu" class="w-10 h-10 text-blue-700 mb-2 animate-pulse"></i>
-                <p class="text-md font-semibold text-blue-900">LLM Processing</p>
-                <p class="text-xs text-blue-700 mt-1">High-speed computation.</p>
-            </div>
-            
-            <div class="w-48 h-48 bg-white border-4 border-blue-300 rounded-2xl glow-shadow p-4 flex flex-col items-center justify-center transform hover:scale-105 transition duration-300">
-                <i data-lucide="rocket" class="w-10 h-10 text-cyan-500 mb-2"></i>
-                <p class="text-md font-semibold text-gray-800">Automated Action</p>
-                <p class="text-xs text-gray-500 mt-1">Delivering intelligent results.</p>
-            </div>
-        </div>
-    </div>
-  </section>
-
-  <section id="projects" class="py-24 text-center bg-gradient-to-b from-white via-blue-50 to-blue-100">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-4xl font-extrabold gradient-text mb-10">Featured Project: BLAI CodeLens</h2>
-      <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-10">
-        <b>BLAI CodeLens</b> is my flagship AI-powered <b>Code Reviewer Tool</b>, designed to analyze GitHub repositories, review code quality, and suggest AI-driven improvements instantly.
-      </p>
-      
-      <div class="bg-white border border-blue-100 shadow-2xl rounded-3xl p-8 md:p-10 mx-auto max-w-4xl glow-shadow hover:shadow-blue-400/50">
-        <i data-lucide="square-code" class="w-16 h-16 text-blue-600 mx-auto mb-4"></i>
-        <p class="text-gray-700 text-xl font-medium mb-4">
-          **Live on Vercel | Source on GitHub**
-        </p>
-        <div class="flex justify-center gap-6 mt-6 flex-wrap">
-          <a href="https://blai-codelens-frontend.vercel.app/" target="_blank" class="bg-blue-700 hover:bg-blue-800 text-white px-8 py-3 rounded-xl shadow-lg transform hover:scale-105 transition">
-            🚀 Try Live Demo
-          </a>
-          <a href="https://github.com/nimrahqureshi/blai-codelens" target="_blank" class="border-2 border-blue-700 text-blue-700 hover:bg-blue-50 px-8 py-3 rounded-xl shadow-md transform hover:scale-105 transition">
-            📂 View GitHub Repo
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="py-24 text-center bg-white border-t border-b border-blue-100">
+  <!-- About -->
+  <section id="about" class="py-24 text-center bg-gradient-to-br from-blue-100 via-white to-blue-200">
     <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-4xl font-extrabold gradient-text mb-10">Ready to Build? Let's Connect.</h2>
-      
-      <div class="bg-blue-700 text-white p-10 rounded-2xl shadow-2xl border border-blue-600 glow-shadow hover:shadow-blue-500/50">
-        <p class="text-xl mb-8 font-light">
-          I am available for new projects involving AI Agents, Web3 development, and custom automation.
+      <h2 class="text-4xl font-extrabold gradient-text mb-6">About Me</h2>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        I’m <b class="text-blue-700">Nimrah Qureshi</b>, founder of <b>Brain Link AI (BLAI)</b> — crafting intelligent AI solutions, automation, and web experiences.
+        My goal: make AI accessible and powerful for everyone.
+      </p>
+      <img src="https://cdn.pixabay.com/photo/2023/07/02/05/45/ai-robot-8105194_960_720.png" alt="AI Robot" class="mx-auto mt-10 w-64 rounded-2xl shadow-lg glow">
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-24 text-center bg-gradient-to-b from-blue-50 via-white to-blue-100">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-extrabold gradient-text mb-10">Featured Project</h2>
+      <div class="card bg-white p-8 rounded-3xl shadow-xl glow">
+        <h3 class="text-2xl font-bold mb-3">🚀 BLAI CodeLens — AI Code Reviewer</h3>
+        <p class="text-gray-700 mb-6">
+          AI-powered code reviewer that analyzes GitHub repos, checks quality, and suggests improvements using AI.
         </p>
-        
-        <div class="flex flex-col sm:flex-row justify-center gap-6">
-          <a href="https://wa.me/923432817289" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-xl font-bold shadow-lg transform hover:scale-105 transition flex items-center justify-center">
-            <i data-lucide="message-square" class="w-5 h-5 mr-2"></i> WhatsApp: 03432817289
-          </a>
-          
-          <a href="mailto:nimrahqureshi@example.com" class="bg-white text-blue-700 hover:bg-gray-100 px-8 py-3 rounded-xl font-bold shadow-lg transform hover:scale-105 transition flex items-center justify-center">
-            <i data-lucide="mail" class="w-5 h-5 mr-2"></i> Send Email
-          </a>
+        <div class="flex justify-center gap-6">
+          <a href="https://blai-codelens-frontend.vercel.app/" target="_blank" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-xl">Live Demo</a>
+          <a href="https://github.com/nimrahqureshi/blai-codelens" target="_blank" class="border border-blue-700 text-blue-700 hover:bg-blue-50 px-6 py-3 rounded-xl">GitHub Repo</a>
         </div>
       </div>
     </div>
   </section>
 
-  <footer class="py-8 bg-blue-700 text-white text-center">
-    <div class="flex justify-center gap-6 text-2xl mb-6">
-      <a href="https://x.com/BLAI716257" target="_blank" class="hover:text-blue-300"><i data-lucide="twitter"></i></a>
-      <a href="https://www.linkedin.com/in/brain-link-ai-11283a389/" target="_blank" class="hover:text-blue-300"><i data-lucide="linkedin"></i></a>
-      <a href="https://www.instagram.com/brain_link_ai" target="_blank" class="hover:text-pink-400"><i data-lucide="instagram"></i></a>
-      <a href="https://www.youtube.com/channel/UCO6oRBpsj5VIjOppRbRKvDw" target="_blank" class="hover:text-red-400"><i data-lucide="youtube"></i></a>
+  <!-- Contact -->
+  <section id="contact" class="py-24 bg-gradient-to-br from-blue-200 via-white to-blue-300 text-center">
+    <div class="max-w-3xl mx-auto contact-box p-10 rounded-3xl">
+      <h2 class="text-4xl font-extrabold gradient-text mb-6">Contact Me</h2>
+      <p class="text-lg text-gray-700 mb-6">
+        Let’s connect for collaborations, projects, or AI consulting.
+      </p>
+      <div class="space-y-4">
+        <p><b>Email:</b> <a href="mailto:nimrahqureshi716257@gmail.com" class="text-blue-700 hover:underline">nimrahqureshi716257@gmail.com</a></p>
+        <p><b>WhatsApp:</b> <a href="https://wa.me/923432817289" class="text-green-600 hover:underline">+92 343 2817289</a></p>
+        <p><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/brain-link-ai-11283a389/" class="text-blue-700 hover:underline">Brain Link AI</a></p>
+      </div>
     </div>
-    <p class="text-sm opacity-90">© 2025 Brain Link AI — Built by <b>Nimrah Qureshi</b></p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 text-center text-gray-800">
+    <p>© 2025 Brain Link AI — Built by <b>Nimrah Qureshi</b></p>
   </footer>
 
+  <!-- Particles Script -->
   <script>
-    const menuBtn = document.getElementById("menu-btn");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const menuLinks = mobileMenu.querySelectorAll("a");
-    let menuOpen = false;
-
-    menuBtn.addEventListener("click", () => {
-      menuOpen = !menuOpen;
-      mobileMenu.classList.toggle("menu-visible", menuOpen);
-      mobileMenu.classList.toggle("menu-hidden", !menuOpen);
-      // Toggles menu icon (optional, requires a script to refresh Lucide icons)
-      const menuIcon = menuBtn.querySelector('i');
-      menuIcon.setAttribute('data-lucide', menuOpen ? 'x' : 'menu');
-      lucide.createIcons();
-    });
-
-    menuLinks.forEach(link => {
-      link.addEventListener("click", () => {
-        mobileMenu.classList.remove("menu-visible");
-        mobileMenu.classList.add("menu-hidden");
-        menuOpen = false;
-        // Re-create icons after navigation
-        lucide.createIcons();
-      });
+    particlesJS('particles-js', {
+      "particles": {
+        "number": { "value": 80 },
+        "color": { "value": "#60a5fa" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.6 },
+        "size": { "value": 3 },
+        "line_linked": { "enable": true, "color": "#3b82f6" },
+        "move": { "speed": 2 }
+      }
     });
   </script>
 </body>
